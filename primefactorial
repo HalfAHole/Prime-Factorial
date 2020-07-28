@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main(void) {								                          		// prime factorial
+long long unsigned int l=43, n=5, f=5, np=3, fact=2*3*5;
+short int c=0, d=0, j=0, k=0, isprime=0, cnt=3;
+printf("#\tPrime\tPrime factorial\n");
+printf("1\t2\t2 \n2\t3\t6 \n4\t5\t30\n");											// print out those missed by filter system below
+
+c=0; n=5; j=0; while (n<=l) {isprime=0;												// loop for numbers
+		c++;		if (c==1) {n+=2;} else {n+=4; c=0;}								// filter multiples of 2 and 3
+		j++; 		if (j!=7 && j!=10) {if (j>=10) {j=1;}							// filter multiples 5
+
+d=0; f=5; k=0; while (f<sqrt(n)) {										  			// loop for factors
+		d++;		if (d==1) {f+=2;} else {f+=4; d=0;}								// filter multiples of 2 and 3
+		k++;		if (k!=7 && k!=10) {if (k>=10) {k=1;}							// filter multiples 5
+
+
+	if (n%f==0) {isprime=1;break;}}}										    		// prime test
+	if (isprime==0) {np++; cnt++; fact=fact*n; printf("%llu\t%llu\t%llu\n", cnt, n, fact);}}}	// count and print primes and factorials
+
+																				                    	// print number of primes
+
+return(0);}
